@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreeView</title>
+    <script src="https://kit.fontawesome.com/5ba5d6beca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="TreeStyle.css">
+</head>
+<body id="cuerpo">
+    <tree-view style="visibility: hidden;" id="tv" header="TreeView" TreeData='[
+    {
+        "titulo": "item 0",
+        "father": "none",
+        "espadre": true,
+        "checked": false,
+        "hijos": [
+            {
+                "titulo": "item 1.1",
+                "father": "item 1",
+                "espadre": false,
+                "checked": false
+            },
+            {
+                "titulo": "item 1.2",
+                "father": "item 1",
+                "espadre": false,
+                "checked": false
+
+            },
+            {
+                "titulo": "item 1.3",
+                "father": "item 1",
+                "espadre": false,
+                "checked": false
+            }
+        ]
+    },
+    {
+        "titulo": "item 2",
+        "father": "none",
+        "espadre": false,
+        "checked": false
+    },
+    {
+        "titulo": "item 3",
+        "father": "none",
+        "espadre": true,
+        "checked": false,
+        "hijos": [
+            {
+                "titulo": "item 3.1",
+                "father": "item 3",
+                "espadre": false,
+                "checked": false
+            },
+            {
+                "titulo": "item 3.2",
+                "father": "item 3",
+                "espadre": true,
+                "hijos": [
+                    {
+                        "titulo": "item 3.2.1",
+                        "father": "item 3.2",
+                        "espadre": false,
+                        "checked": false
+                    },
+                    {
+                        "titulo": "item 3.2.2",
+                        "father": "item 3.2",
+                        "espadre": false,
+                        "checked": false
+                    }
+                ]
+            },
+            {
+                "titulo": "item 3.3",
+                "father": "item 3",
+                "espadre": true,
+                "checked": false,
+                "hijos": [
+                    {
+                        "titulo": "item 3.3.1",
+                        "father": "item 3.3",
+                        "espadre": false,
+                        "checked": false
+                    },
+                    {
+                        "titulo": "item 3.3.2",
+                        "father": "item 3.3",
+                        "espadre": false,
+                        "checked": false
+                    },
+                    {
+                        "titulo": "item 3.3.3",
+                        "father": "item 3.3",
+                        "espadre": false,
+                        "checked": false
+                    },
+                    {
+                        "titulo": "item 3.3.4",
+                        "father": "item 3.3",
+                        "espadre": true,
+                        "checked": false,
+                        "hijos": [
+                            {
+                                "titulo": "item 3.3.4.1",
+                                "father": "item 3.3",
+                                "espadre": false,
+                                "checked": false
+                            },
+                            {
+                                "titulo": "item 3.3.4.2",
+                                "father": "item 3.3",
+                                "espadre": false,
+                                "checked": false
+                            },
+                            {
+                                "titulo": "item 3.3.4.3",
+                                "father": "item 3.3",
+                                "espadre": false,
+                                "checked": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {        
+    "titulo": "item 4",
+    "father": "none",
+    "espadre": true,
+    "checked": false,
+    "hijos": [
+        {
+            "titulo": "item 4.1",
+            "father": "item 4",
+            "espadre": false,
+            "checked": false
+
+        },
+        {
+            "titulo": "item 4.2",
+            "father": "item 4",
+            "espadre": false,
+            "checked": false
+        },
+        {
+            "titulo": "item 4.3",
+            "father": "item 4",
+            "espadre": false,
+            "checked": false
+        }
+    ]
+},
+{
+    "titulo": "I am",
+    "father": "none",
+    "espadre": false,
+    "checked": false,
+     "hijos": [
+        {
+            "titulo": "Paul",
+            "father": "I am",
+            "espadre": false,
+            "checked": false
+        },
+        {
+            "titulo": "Muad Dib",
+            "father": "I am",
+            "espadre": false,
+            "checked": false
+        },
+        {
+            "titulo": "Atreides",
+            "father": "I am",
+            "espadre": false,
+            "checked": false
+        },
+        {
+            "titulo": "Duke of Arrakis",
+            "father": "I am",
+            "espadre": false,
+            "checked": false
+        }
+     ]
+}
+]'></tree-view>
+
+    <script src="./components/TreeView.js">
+        
+//         let data = [
+//     {
+//         "titulo": "item 1",
+//         "father": "none",
+//         "espadre": true,
+//         "checked": false,
+//         "hijos": [
+//             {
+//                 "titulo": "item 1.1",
+//                 "father": "item 1",
+//                 "espadre": false,
+//                 "checked": false
+//             },
+//             {
+//                 "titulo": "item 1.2",
+//                 "father": "item 1",
+//                 "espadre": false,
+//                 "checked": false
+
+//             },
+//             {
+//                 "titulo": "item 1.3",
+//                 "father": "item 1",
+//                 "espadre": false,
+//                 "checked": false
+//             }
+//         ]
+//     },
+//     {
+//         "titulo": "item 2",
+//         "father": "none",
+//         "espadre": false,
+//         "checked": false
+//     },
+//     {
+//         "titulo": "item 3",
+//         "father": "none",
+//         "espadre": true,
+//         "checked": false,
+//         "hijos": [
+//             {
+//                 "titulo": "item 3.1",
+//                 "father": "item 3",
+//                 "espadre": false,
+//                 "checked": false
+//             },
+//             {
+//                 "titulo": "item 3.2",
+//                 "father": "item 3",
+//                 "espadre": true,
+//                 "hijos": [
+//                     {
+//                         "titulo": "item 3.2.1",
+//                         "father": "item 3.2",
+//                         "espadre": false,
+//                         "checked": false
+//                     },
+//                     {
+//                         "titulo": "item 3.2.2",
+//                         "father": "item 3.2",
+//                         "espadre": false,
+//                         "checked": false
+//                     }
+//                 ]
+//             },
+//             {
+//                 "titulo": "item 3.3",
+//                 "father": "item 3",
+//                 "espadre": true,
+//                 "checked": false,
+//                 "hijos": [
+//                     {
+//                         "titulo": "item 3.3.1",
+//                         "father": "item 3.3",
+//                         "espadre": false,
+//                         "checked": false
+//                     },
+//                     {
+//                         "titulo": "item 3.3.2",
+//                         "father": "item 3.3",
+//                         "espadre": false,
+//                         "checked": false
+//                     },
+//                     {
+//                         "titulo": "item 3.3.3",
+//                         "father": "item 3.3",
+//                         "espadre": false,
+//                         "checked": false
+//                     },
+//                     {
+//                         "titulo": "item 3.3.4",
+//                         "father": "item 3.3",
+//                         "espadre": true,
+//                         "checked": false,
+//                         "hijos": [
+//                             {
+//                                 "titulo": "item 3.3.4.1",
+//                                 "father": "item 3.3",
+//                                 "espadre": false,
+//                                 "checked": false
+//                             },
+//                             {
+//                                 "titulo": "item 3.3.4.2",
+//                                 "father": "item 3.3",
+//                                 "espadre": false,
+//                                 "checked": false
+//                             },
+//                             {
+//                                 "titulo": "item 3.3.4.3",
+//                                 "father": "item 3.3",
+//                                 "espadre": false,
+//                                 "checked": false
+//                             }
+//                         ]
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {        
+//     "titulo": "item 4",
+//     "father": "none",
+//     "espadre": true,
+//     "checked": false,
+//     "hijos": [
+//         {
+//             "titulo": "item 4.1",
+//             "father": "item 4",
+//             "espadre": false,
+//             "checked": false
+
+//         },
+//         {
+//             "titulo": "item 4.2",
+//             "father": "item 4",
+//             "espadre": false,
+//             "checked": false
+//         },
+//         {
+//             "titulo": "item 4.3",
+//             "father": "item 4",
+//             "espadre": false,
+//             "checked": false
+//         }
+//     ]
+// },
+// {
+//     "titulo": "I am",
+//     "father": "none",
+//     "espadre": false,
+//     "checked": false,
+//      "hijos": [
+//         {
+//             "titulo": "Paul",
+//             "father": "I am",
+//             "espadre": false,
+//             "checked": false
+//         },
+//         {
+//             "titulo": "Muad Dib",
+//             "father": "I am",
+//             "espadre": false,
+//             "checked": false
+//         },
+//         {
+//             "titulo": "Atreides",
+//             "father": "I am",
+//             "espadre": false,
+//             "checked": false
+//         },
+//         {
+//             "titulo": "Duke of Arrakis",
+//             "father": "I am",
+//             "espadre": false,
+//             "checked": false
+//         }
+//      ]
+// }
+// ];
+        
+        let tv = document.getElementsByTagName('tree-view');
+    </script>
+    
+</body>
+</html>

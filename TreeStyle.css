@@ -1,0 +1,38 @@
+body{
+    background-image: url('./public/photo_2024-03-28_19-49-26.jpg');
+    font-family: Monocraft;
+}
+
+li{
+    font-size: 25px;
+    
+}
+
+i{
+    color: black;
+}
+
+
+.sublist{
+    display: none;
+}
+
+.mycheck{
+    cursor:pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.mycheck:checked {
+    background-color: rgb(236 72 153);
+    width: 25px;
+    height: 25px;
+  }
+
+  .fa-trash{
+    margin-left: 40px;
+  }
+
+  ul{
+    list-style: none;
+  }
